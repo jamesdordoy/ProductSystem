@@ -18,3 +18,10 @@
 - set up .env
 - migrate and seed database
 - npm run dev
+
+### Testing
+Tests have been set up for the models and routes.
+
+```bash
+php artisan:test
+```
