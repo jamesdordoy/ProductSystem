@@ -31,11 +31,13 @@ class ProductTest extends TestCase
 
         $discountA = Discount::factory()->create([
             'title' => 'DiscountA',
+            'handle' =>'discount_a',
             'discount_percentage' => 20,
         ]);
 
         $discountB = Discount::factory()->create([
             'title' => 'DiscountB',
+            'handle' =>'discount_b',
             'discount_percentage' => 20,
         ]);
 

@@ -72,6 +72,7 @@ class DatabaseSeeder extends Seeder
 
         $electronicsPromotion = Discount::factory()->create([
             'title' => 'Electronics Promotion',
+            'handle' => 'electronics_promotion',
             'discount_percentage' => 10
         ]);
 
@@ -79,6 +80,7 @@ class DatabaseSeeder extends Seeder
 
         $clubcard = Discount::factory()->create([
             'title' => 'Clubcard discount',
+            'handle' => 'clubcard',
             'discount_percentage' => 5
         ]);
     }

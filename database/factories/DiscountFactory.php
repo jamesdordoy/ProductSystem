@@ -18,6 +18,7 @@ class DiscountFactory extends Factory
     {
         return [
             'title' => 'title',
+            'handle' => 'handle',
             'discount_percentage' => 1,
         ];
     }
