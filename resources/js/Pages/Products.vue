@@ -16,7 +16,7 @@
 
   <main class="p-6 flex flex-wrap justify-between">
     <div v-for="(product, i) in products" class="md:w-1/2 lg:w-1/3 p-2 sm:w-full">
-      <div :href="`/products/${product.id}`" class="w-96 block py-4">
+      <div class="w-96 block py-4">
         <div class="flex ">
           <span v-show="product.total_discount_percentage > 0" class="rounded bg-green-500 p-1 mb-1 mr-1">{{ product.total_discount_percentage }}% off!</span>
           <span class="rounded bg-blue-500 p-1 mb-1">{{ product.product_category.title }}</span>
