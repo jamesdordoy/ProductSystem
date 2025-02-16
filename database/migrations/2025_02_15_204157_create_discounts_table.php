@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('discounts', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->unique();
+            $table->unsignedInteger('discount_percentage');
             $table->timestamps();
         });
     }
