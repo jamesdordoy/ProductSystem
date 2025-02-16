@@ -22,7 +22,7 @@ class ProductsController extends Controller
             'products' => ProductResource::collection($products),
             'filters' => [
                 'search' => $request->get('search', ''),
-                'clubcard' => $request->get('clubcard', false),
+                'clubcard' => (bool) $request->get('clubcard', false),
             ],
         ]);
     }

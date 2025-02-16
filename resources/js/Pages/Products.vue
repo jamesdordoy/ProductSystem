@@ -5,7 +5,7 @@
       <div class="flex">
         <div class="flex text-white">
           <p class="mt-2 mx-2">Clubcard customer?</p>
-          <Toggle @toggle="onToggle" class="mr-4" />
+          <Toggle :toggled="filters.clubcard" @toggle="onToggle" class="mr-4" />
         </div>
         <form>
           <input v-model="filters.search" type="text" name="search" class="bg-white rounded-xl block min-w-0 grow py-1.5 pr-3 pl-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6" placeholder="Search">
@@ -26,8 +26,8 @@
           <h3>{{ product.title }}</h3>
           <div class="flex">
             <p class="text-red-500 mr-2 line-through" v-if="product.total_discount_percentage > 0">{{ product.formatted_price }}</p>
-            <p v-show="clubecardPricing == false">{{ product.total }}</p>
-            <p v-show="clubecardPricing == true">{{ product.total_discount_with_clubcard }}</p>
+            <p v-show="filters.clubcard == false">{{ product.total }}</p>
+            <p v-show="filters.clubcard == true">{{ product.total_discount_with_clubcard }}</p>
           </div>
         </div>
       </div>
@@ -45,9 +45,6 @@ import placeholderImage from '../../assets/placeholder.png';
 import {watch, ref} from "vue";
 import { router } from '@inertiajs/vue3'
 
-const clubecardPricing = ref(false);
-
-
 const props = defineProps({
   products: {
     type: Array,
@@ -64,7 +61,7 @@ const props = defineProps({
 });
 
 const onToggle = (value) => {
-  clubecardPricing.value = value;
+  props.filters.clubcard = value;
 }
 
 watch(props.filters, () => {
